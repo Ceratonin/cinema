@@ -14,3 +14,20 @@
     background-color:darkgrey;
     font-size:14px;
 }
+
+.changeBtn {
+    padding: 8px;
+    color:black;
+    font-size:16px;
+    border:1px solid dark;
+    cursor:pointer;
+    background-color: gray;
+}
+
+.deleteBtn {
+    color:black;
+    cursor:pointer;
+    border: 1px solid dark;
+    background-color:darkgrey;
+    font-size:14px;
+}

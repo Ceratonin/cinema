@@ -21,6 +21,14 @@
   margin-top: 10px;
   justify-content: space-between;
   background-color: #555555;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.film__Content {
+  display: grid;
+  
 }
 
 .movieCreate {
@@ -38,12 +46,12 @@ form {
   grid-gap: 10px;
 }
 
-.sendBtn {
+.sendBtn, .changeBtn {
   grid-column: 2;
   grid-row: 5;
 }
 
-.uploadPhoto {
+.uploadPhoto, .deleteBtn {
   grid-column: 3;
   grid-row: 5;
 }

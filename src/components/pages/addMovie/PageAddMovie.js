@@ -5,14 +5,42 @@ import MovieList from "../../MovieList";
 
 const PageAddMoviePage = () => {
   const [movies, setMovies] = React.useState([
-    { id: "num1", name: "movieName1", info: "movieInfo1" },
-    { id: "num2", name: "movieName2", info: "movieInfo2" },
-    { id: "num3", name: "movieName3", info: "movieInfo3" },
-    { id: "num4", name: "movieName4", info: "movieInfo4" },
+    {
+      id: "num1",
+      name: "name1",
+      genre: "genre1",
+      tagline: "tagline1",
+      country: "country1",
+      year: "year1",
+      director: "director1",
+      actors: "actors1",
+      budget: "budget1",
+      rating: "rating1",
+    },
+    {
+      id: "num2",
+      name: "name2",
+      genre: "genre2",
+      tagline: "tagline2",
+      country: "country2",
+      year: "year2",
+      director: "director2",
+      actors: "actors2",
+      budget: "budget2",
+      rating: "rating2",
+    },
   ]);
 
-  const FilmCreate = (newMovie) => {
+  const filmCreate = (newMovie) => {
     setMovies([...movies, newMovie]);
+  };
+
+  const filmDelete = (film) => {
+    setMovies(movies.filter((e) => e.id !== film.id));
+  };
+
+  const filmChange = () => {
+    setMovies();
   };
 
   return (
@@ -20,9 +48,9 @@ const PageAddMoviePage = () => {
       <div className="empty" />
       <div className="main">
         <div className="movieCreate">
-          <MovieCreate create={FilmCreate} />
+          <MovieCreate create={filmCreate} />
         </div>
-        <MovieList movies={movies} />
+        <MovieList remove={filmDelete} movies={movies} />
       </div>
       <div className="empty" />
     </div>
