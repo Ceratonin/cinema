@@ -1,9 +1,9 @@
 TODO:
 
-Authorization page {
+Authorization page (
   -remembering user login state
   -google auth
-}
+)
 
 Guest page {
   -list of movies
