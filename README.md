@@ -1,8 +1,7 @@
 TODO:
-
 Authorization page 
-  -remembering user login state
-  -google auth
+  remembering user login state
+  google auth
 
 
 Guest page {
