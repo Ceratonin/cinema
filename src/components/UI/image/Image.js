@@ -1,7 +1,7 @@
-const Image = ({children, ...props}) => {
+const Image = ({...props}) => {
   return (
   <div {...props}>
-      {children}
+      {/* {children} */}
       </div>
   );
 };

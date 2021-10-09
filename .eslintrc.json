@@ -59,6 +59,7 @@
     }],
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
-    "lines-between-class-members": "off"
+    "lines-between-class-members": "off",
+    "consistent-return": "off"
   }
 }
