@@ -1,0 +1,15 @@
+.errPage {
+  display: block;
+  height: 100%;
+}
+
+.errPage__text {
+  color: white;
+  font-size: 20px;
+  padding: 30px 70px 20px;
+}
+
+.errPage__link {
+  color:lightgray;
+  text-decoration: none;
+}

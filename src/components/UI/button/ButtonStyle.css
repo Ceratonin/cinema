@@ -1,33 +1,48 @@
 .sendBtn {
-    padding: 8px;
-    color:black;
-    font-size:16px;
-    border:1px solid dark;
-    cursor:pointer;
-    background-color: gray;
+  padding: 8px;
+  color: black;
+  font-size: 16px;
+  border: 1px solid dark;
+  cursor: pointer;
+  background-color: gray;
 }
 
 .uploadPhoto {
-    color:black;
-    cursor:pointer;
-    border: 1px solid dark;
-    background-color:darkgrey;
-    font-size:14px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid dark;
+  background-color: darkgrey;
+  font-size: 14px;
 }
 
 .changeBtn {
-    padding: 8px;
-    color:black;
-    font-size:16px;
-    border:1px solid dark;
-    cursor:pointer;
-    background-color: gray;
+  padding: 8px;
+  color: black;
+  font-size: 16px;
+  border: 1px solid dark;
+  cursor: pointer;
+  background-color: gray;
 }
 
 .deleteBtn {
-    color:black;
-    cursor:pointer;
-    border: 1px solid dark;
-    background-color:darkgrey;
-    font-size:14px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid dark;
+  background-color: darkgrey;
+  font-size: 14px;
+}
+
+.logOff {
+  display: flex;
+  margin-left: auto;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.logOff_text {
+  color:white;
+  text-decoration:none;
+  align-self: center;
+  padding-right:40px;
 }

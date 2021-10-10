@@ -1,13 +1,13 @@
-// HACPAHO
+// HACPAHO можно пофиксить через map, как сделано с routes
 
 import { useState } from "react";
 import Btn from "./UI/button/Button";
 import Input from "./UI/input/Input";
 import Image from "./UI/image/Image";
 
-const MovieCreate = ({ create }:any) => {
+const MovieCreate = ({ create }: any) => {
   const [movie, setMovie] = useState({
-    id:"",
+    id: "",
     name: "",
     genre: "",
     tagline: "",
@@ -19,7 +19,7 @@ const MovieCreate = ({ create }:any) => {
     rating: "",
   });
 
-  const addNewMovie = (e:any) => {
+  const addNewMovie = (e: any) => {
     e.preventDefault();
 
     const newMovie = {
@@ -30,7 +30,7 @@ const MovieCreate = ({ create }:any) => {
     create(newMovie);
 
     setMovie({
-      id:"",
+      id: "",
       name: "",
       genre: "",
       tagline: "",
@@ -47,50 +47,50 @@ const MovieCreate = ({ create }:any) => {
     <form name="albert">
       <Input
         value={movie.name}
-        onChange={(e:any) => setMovie({ ...movie, name: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, name: e.target.value })}
         placeholder="Название"
       />
       <Input
         value={movie.genre}
-        onChange={(e:any) => setMovie({ ...movie, genre: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, genre: e.target.value })}
         placeholder="Жанр"
       />
       <Input
         value={movie.tagline}
-        onChange={(e:any) => setMovie({ ...movie, tagline: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, tagline: e.target.value })}
         placeholder="Слоган"
       />
       <Input
         value={movie.country}
-        onChange={(e:any) => setMovie({ ...movie, country: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, country: e.target.value })}
         placeholder="Страна выпуска"
       />
       <Input
         value={movie.year}
-        onChange={(e:any) => setMovie({ ...movie, year: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, year: e.target.value })}
         placeholder="Год выпуска"
       />
       <Input
         value={movie.director}
-        onChange={(e:any) => setMovie({ ...movie, director: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, director: e.target.value })}
         placeholder="Режиссер"
       />
       <Input
         value={movie.actors}
-        onChange={(e:any) => setMovie({ ...movie, actors: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, actors: e.target.value })}
         placeholder="Актеры"
       />
       <Input
         value={movie.budget}
-        onChange={(e:any) => setMovie({ ...movie, budget: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, budget: e.target.value })}
         placeholder="Бюджет"
       />
       <Input
         value={movie.rating}
-        onChange={(e:any) => setMovie({ ...movie, rating: e.target.value })}
+        onChange={(e: any) => setMovie({ ...movie, rating: e.target.value })}
         placeholder="Рейтинг"
       />
-      <Image className="addPhoto"/>
+      <Image className="addPhoto" />
       <Btn onClick={addNewMovie} className="sendBtn">
         Отправить
       </Btn>

@@ -4,13 +4,18 @@
   box-sizing: border-box;
 }
 
-.global {
-  height: 100%;
-  background-color: #313131;
-}
-
 :root {
+  display:grid;
   height: 100%;
   background-color: #313131;
   margin: 0 auto;
+}
+
+.navbar {
+  display:grid;
+  height: 40px;
+  width:100vw;
+  justify-items:center;
+  padding: 0 10px;
+  background-color:#505050;
 }

@@ -1,6 +1,6 @@
-import classes from "./InputStyle.css"
+import "./InputStyle.css"
 
-const Input = (props) => {
+const Input = (props:any) => {
     return(
         <input type="text" {...props} className="input"/> 
     )

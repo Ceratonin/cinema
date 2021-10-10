@@ -5,7 +5,7 @@ import MovieList, {IMovie} from "../../MovieList";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const PageAddMoviePage = () => {
-  const [movies, setMovies] = useLocalStorage("MovieData", "");
+  const [movies, setMovies] = useLocalStorage("MovieData", []);
 
   const movieAdd = (newMovie: IMovie) => {
     setMovies([...movies, newMovie]);
