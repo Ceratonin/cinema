@@ -4,14 +4,19 @@ import AuthContext from "../context";
 import { adminRoutes, unloggedRoutes, loggedRoutes } from "../routes";
 
 const AppRouter = () => {
-  const {isAuth, setIsAuth} = useContext(AuthContext)
+  const { isAuth } = useContext(AuthContext);
+  console.log(isAuth)
 
   switch (isAuth) {
     case "user":
       return (
         <Switch>
           {loggedRoutes.map((route: any) => (
-            <Route component={route.component} path={route.path} />
+            <Route
+              component={route.component}
+              path={route.path}
+              key={route.path}
+            />
           ))}
           <Redirect to="/err" />
         </Switch>
@@ -20,7 +25,11 @@ const AppRouter = () => {
       return (
         <Switch>
           {adminRoutes.map((route: any) => (
-            <Route component={route.component} path={route.path} />
+            <Route
+              component={route.component}
+              path={route.path}
+              key={route.path}
+            />
           ))}
           <Redirect to="/err" />
         </Switch>
@@ -29,7 +38,11 @@ const AppRouter = () => {
       return (
         <Switch>
           {unloggedRoutes.map((route: any) => (
-            <Route component={route.component} path={route.path} />
+            <Route
+              component={route.component}
+              path={route.path}
+              key={route.path}
+            />
           ))}
           <Redirect to="/err" />
         </Switch>

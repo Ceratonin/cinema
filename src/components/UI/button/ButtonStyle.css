@@ -32,17 +32,58 @@
   font-size: 14px;
 }
 
+.logInBtn {
+  padding: 8px;
+  color: black;
+  font-size: 16px;
+  border: 1px solid dark;
+  cursor: pointer;
+  background-color: gray;
+  width:100%;
+}
+
 .logOff {
   display: flex;
   margin-left: auto;
-  color: black;
-  cursor: pointer;
-  font-size: 20px;
+  align-items:center;
 }
 
-.logOff_text {
-  color:white;
+.toHome{
+  display:flex;
+  margin-right:10px;
+  color:black;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.toHome__text {
+  color:yellow;
   text-decoration:none;
   align-self: center;
+  padding-right:10px;
+}
+
+.toAdmin{
+  display:flex;
+  margin-right:auto;
+  color:black;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.toAdmin__text{
+  color:darkseagreen;
+  text-decoration:none;
+  align-self:center;
+  padding-right:10px;
+}
+
+.noneBtn {
+  border:none;
+  background-color: transparent;
   padding-right:40px;
+  text-decoration:none;
+  color:white;
+  font-size: 20px;
+  cursor: pointer;
 }

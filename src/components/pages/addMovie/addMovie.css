@@ -56,7 +56,7 @@ form {
   grid-row: 5;
 }
 
-.addPhoto {
+.moviePhoto {
   grid-column: 3;
   grid-row: 1/6;
   border: 1px dashed grey;
@@ -66,7 +66,7 @@ form {
   background-color: #555555
 }
 
-.moviePhoto {
+.addPhoto {
   grid-column: 3;
   grid-row: 1/5;
   border: 1px dashed grey;

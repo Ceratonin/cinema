@@ -1,8 +1,13 @@
-import { createContext } from "react"
+import React, { createContext } from "react";
 
-const AuthContext = createContext<{
-    isAuth: any,
-    setIsAuth: any,
-} | null>(null);
+export interface IIsAuth<T> {
+  isAuth: T;
+  setIsAuth: React.Dispatch<React.SetStateAction<T>>;
+}
 
-export default AuthContext
+const AuthContext = createContext<IIsAuth<string>>({
+  isAuth: "",
+  setIsAuth: () => "",
+});
+
+export default AuthContext;

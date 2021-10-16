@@ -5,7 +5,7 @@ import MovieChange from "./MovieEdit";
 import Btn from "./UI/button/Button";
 import Image from "./UI/image/Image";
 
-const MovieInfo = ({ film, remove, edit }: any) => {
+const MovieInfo = ({ film, remove, edit, isAdmin }: any) => {
   const {
     id,
     name,
@@ -19,6 +19,8 @@ const MovieInfo = ({ film, remove, edit }: any) => {
     rating,
   } = film;
 
+  let showBtn;
+
   const [movieEdit, setMovieEdit] = useState(false);
 
   const movieRemove = () => {
@@ -31,6 +33,22 @@ const MovieInfo = ({ film, remove, edit }: any) => {
 
   useEffect(() => {}, [movieEdit]);
 
+  if (isAdmin) {
+    showBtn = (
+      <>
+        <Btn className="changeBtn" onClick={movieChange} type="button">
+          Изменить
+        </Btn>
+        <Btn className="deleteBtn" onClick={movieRemove} type="button">
+          Удалить
+        </Btn>
+        <Image className="addPhoto" />
+      </>
+    )
+  } else {
+    showBtn = <Image className="moviePhoto" />;
+  }
+
   return movieEdit === false ? (
     <div className="film">
       <div className="fragment">{name}</div>
@@ -42,16 +60,10 @@ const MovieInfo = ({ film, remove, edit }: any) => {
       <div className="fragment">{actors}</div>
       <div className="fragment">$ {budget}</div>
       <div className="fragment">{rating}/10</div>
-      <Image className="moviePhoto" />
-      <Btn className="changeBtn" onClick={movieChange} type="button">
-        Изменить
-      </Btn>
-      <Btn className="deleteBtn" onClick={movieRemove} type="button">
-        Удалить
-      </Btn>
+      {showBtn}
     </div>
   ) : (
-    <MovieChange film={film} edit={edit} setMovieEdit={setMovieEdit}/>
+    <MovieChange film={film} edit={edit} setMovieEdit={setMovieEdit} />
   );
 };
 

@@ -90,7 +90,7 @@ const MovieCreate = ({ create }: any) => {
         onChange={(e: any) => setMovie({ ...movie, rating: e.target.value })}
         placeholder="Рейтинг"
       />
-      <Image className="addPhoto" />
+      <Image className="moviePhoto" />
       <Btn onClick={addNewMovie} className="sendBtn">
         Отправить
       </Btn>

@@ -14,11 +14,11 @@ export interface IMovie {
   rating: number;
 }
 
-const MovieList = ({movies, remove, edit}:any) => {
+const MovieList = ({movies, remove, edit, isAdmin}:any) => {
   return (
     <div className="MovieList">
       {movies.map((film:IMovie, index:number) => (
-        <MovieInfo remove={remove} edit={edit} id={index+1} film={film} key={film.id} />
+        <MovieInfo remove={remove} edit={edit} id={index+1} film={film} key={film.id} isAdmin={isAdmin} />
       ))}
     </div>
   );
