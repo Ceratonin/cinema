@@ -43,7 +43,7 @@ const MovieInfo = ({ film, remove, edit, isAdmin }: any) => {
         <Btn className="deleteBtn" onClick={movieRemove} type="button">
           Удалить
         </Btn>
-        <Image className="moviePhoto" src={photo} />
+        <Image className="addPhoto__small" src={photo} />
       </>
     )
   } else {

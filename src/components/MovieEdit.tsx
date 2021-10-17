@@ -98,7 +98,7 @@ const MovieChange = ({ film, edit, setMovieEdit }: any) => {
         onChange={(e: any) => setMovie({ ...movie, rating: e.target.value })}
         placeholder="Рейтинг"
       />
-      <Image className="addPhoto__small" src={photo} />
+      <Image className="addPhoto__small" src={movie.photo} onClick={() => setModalIsVisible(true)} />
       <ModalWindow visible={modalIsVisible} setVisible={setModalIsVisible}>
         <Input
           value={movie.photo}
