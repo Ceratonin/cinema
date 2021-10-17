@@ -2,6 +2,7 @@ import { useState } from "react";
 import Btn from "./UI/button/Button";
 import Image from "./UI/image/Image";
 import Input from "./UI/input/Input";
+import ModalWindow from "./UI/modal/modalWindow";
 
 const MovieChange = ({ film, edit, setMovieEdit }: any) => {
   const {
@@ -15,6 +16,7 @@ const MovieChange = ({ film, edit, setMovieEdit }: any) => {
     actors,
     budget,
     rating,
+    photo,
   } = film;
 
   const [movie, setMovie] = useState({
@@ -28,23 +30,26 @@ const MovieChange = ({ film, edit, setMovieEdit }: any) => {
     actors,
     budget,
     rating,
+    photo,
   });
 
-  const approveChange = (e:any) => {
-    e.preventDefault()
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  const approveChange = (e: any) => {
+    e.preventDefault();
 
     const newEditedMovie = {
-        ...movie,
-      };
+      ...movie,
+    };
 
-      setMovieEdit((value:any) => !value);
+    setMovieEdit((value: any) => !value);
 
-      edit(newEditedMovie)
-  }
+    edit(newEditedMovie);
+  };
 
   const disapproveChange = () => {
-    setMovieEdit((value:any) => !value);
-  }
+    setMovieEdit((value: any) => !value);
+  };
 
   return (
     <div className="film">
@@ -93,11 +98,18 @@ const MovieChange = ({ film, edit, setMovieEdit }: any) => {
         onChange={(e: any) => setMovie({ ...movie, rating: e.target.value })}
         placeholder="Рейтинг"
       />
-      <Image className="moviePhoto" />
+      <Image className="addPhoto__small" src={photo} />
+      <ModalWindow visible={modalIsVisible} setVisible={setModalIsVisible}>
+        <Input
+          value={movie.photo}
+          onChange={(e: any) => setMovie({ ...movie, photo: e.target.value })}
+          placeholder="Введите ссылку на фото"
+        />
+      </ModalWindow>
       <Btn onClick={approveChange} className="sendBtn">
         Подтвердить
       </Btn>
-      <Btn onClick={disapproveChange} className="uploadPhoto">
+      <Btn onClick={disapproveChange} className="cancelBtn">
         Отменить
       </Btn>
     </div>

@@ -56,26 +56,6 @@ form {
   grid-row: 5;
 }
 
-.moviePhoto {
-  grid-column: 3;
-  grid-row: 1/6;
-  border: 1px dashed grey;
-  margin: 6px;
-  aspect-ratio: 27/40;
-  justify-self: center;
-  background-color: #555555
-}
-
-.addPhoto {
-  grid-column: 3;
-  grid-row: 1/5;
-  border: 1px dashed grey;
-  margin: 6px;
-  aspect-ratio: 27/40;
-  justify-self: center;
-  background-color: #555555
-}
-
 .fragment {
   padding: 4px;
   font-weight: 500;

@@ -17,6 +17,7 @@ const MovieInfo = ({ film, remove, edit, isAdmin }: any) => {
     actors,
     budget,
     rating,
+    photo,
   } = film;
 
   let showBtn;
@@ -42,11 +43,11 @@ const MovieInfo = ({ film, remove, edit, isAdmin }: any) => {
         <Btn className="deleteBtn" onClick={movieRemove} type="button">
           Удалить
         </Btn>
-        <Image className="addPhoto" />
+        <Image className="moviePhoto" src={photo} />
       </>
     )
   } else {
-    showBtn = <Image className="moviePhoto" />;
+    showBtn = <Image className="moviePhoto__home" src={photo} />
   }
 
   return movieEdit === false ? (

@@ -1,5 +1,5 @@
 import MovieInfo from "./MovieInfo";
-import "./pages/addMovie/addMovie.css"
+import "./pages/addMovie/addMovie.css";
 
 export interface IMovie {
   id: number;
@@ -12,13 +12,21 @@ export interface IMovie {
   actors: string;
   budget: number;
   rating: number;
+  photo: any;
 }
 
-const MovieList = ({movies, remove, edit, isAdmin}:any) => {
+const MovieList = ({ movies, remove, edit, isAdmin }: any) => {
   return (
     <div className="MovieList">
-      {movies.map((film:IMovie, index:number) => (
-        <MovieInfo remove={remove} edit={edit} id={index+1} film={film} key={film.id} isAdmin={isAdmin} />
+      {movies.map((film: IMovie, index: number) => (
+        <MovieInfo
+          remove={remove}
+          edit={edit}
+          id={index + 1}
+          film={film}
+          key={film.id}
+          isAdmin={isAdmin}
+        />
       ))}
     </div>
   );

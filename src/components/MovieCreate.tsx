@@ -4,6 +4,7 @@ import { useState } from "react";
 import Btn from "./UI/button/Button";
 import Input from "./UI/input/Input";
 import Image from "./UI/image/Image";
+import ModalWindow from "./UI/modal/modalWindow";
 
 const MovieCreate = ({ create }: any) => {
   const [movie, setMovie] = useState({
@@ -17,7 +18,10 @@ const MovieCreate = ({ create }: any) => {
     actors: "",
     budget: "",
     rating: "",
+    photo: "",
   });
+
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
   const addNewMovie = (e: any) => {
     e.preventDefault();
@@ -40,6 +44,7 @@ const MovieCreate = ({ create }: any) => {
       actors: "",
       budget: "",
       rating: "",
+      photo: "",
     });
   };
 
@@ -90,7 +95,18 @@ const MovieCreate = ({ create }: any) => {
         onChange={(e: any) => setMovie({ ...movie, rating: e.target.value })}
         placeholder="Рейтинг"
       />
-      <Image className="moviePhoto" />
+      <Image
+        className="addPhoto"
+        src={movie.photo}
+        onClick={() => setModalIsVisible(true)}
+      />
+      <ModalWindow visible={modalIsVisible} setVisible={setModalIsVisible}>
+        <Input
+          value={movie.photo}
+          onChange={(e: any) => setMovie({ ...movie, photo: e.target.value })}
+          placeholder="Введите ссылку на фото"
+        />
+      </ModalWindow>
       <Btn onClick={addNewMovie} className="sendBtn">
         Отправить
       </Btn>
